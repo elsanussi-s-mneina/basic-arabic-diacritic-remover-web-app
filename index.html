@@ -99,9 +99,10 @@ SOFTWARE.
 <body>
   <h1>Basic Arabic Diacritic Remover: الحاذف البسيط للتشكيل</h1>
   <h2>Input: المعطيات</h2>
-  <p>Paste or type diacritic text in the following text input area: ضع النص بالتشكيل في الصندوق التالي</p>
-  
-  <h1></h1>
+  <p>Paste or type diacritic text in the following text input area: ضع النص بالتشكيل في الصندوق التالي
+  <br>
+    <button onclick="document.getElementById('arabicInputTextArea').value = 'هَذَا مَثَلٌ. This is an example';">Put Example ضِعْ مَثَلًا</button>
+</p>
   <textarea id="arabicInputTextArea" rows="4" cols="100"></textarea>
   <h2>Actions أوامر</h2>
   <button onclick="document.getElementById('arabicOutputTextArea').value = removeDiacritics(document.getElementById('arabicInputTextArea').value);">Remove Diacritics احذف التشكيل</button>
