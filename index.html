@@ -1,0 +1,83 @@
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+  <title>Arabic Diacritic Remover</title>
+  <script>
+    function removeDiacritics(inputString)
+    {
+      result = "";
+
+      for (var i = 0; i < inputString.length; i++)
+      {
+        if (inputString[i] === "\u064E")
+        {
+          // ARABIC FATHA
+          // Unicode: U+064E, UTF-8: D9 8E
+        }
+        else if (inputString[i] === "\u0650")
+        {
+          // ARABIC KASRA
+          // Unicode: U+0650, UTF-8: D9 90
+        }
+        else if (inputString[i] === "\u064F")
+        {
+          // ARABIC DAMMA
+          // Unicode: U+064F, UTF-8: D9 8F
+        }
+        else if (inputString[i] === "\u064B")
+        {
+          // ARABIC FATHATAN
+          // Unicode: U+064B, UTF-8: D9 8B
+        }
+        else if (inputString[i] === "\u064D")
+        {
+          // ARABIC KASRATAN
+          // Unicode: U+064D, UTF-8: D9 8D
+        }
+        else if (inputString[i] === "\u064C")
+        {
+          // ARABIC DAMMATAN
+          // Unicode: U+064C, UTF-8: D9 8C
+        }
+        else if (inputString[i] === "\u0651")
+        {
+          // ARABIC SHADDA
+          // Unicode: U+0651, UTF-8: D9 91
+        }
+        else if (inputString[i] === "\u0652")
+        {
+          // ARABIC SUKUN
+          // Unicode: U+0652, UTF-8: D9 92
+        }  
+        else if (inputString[i] === "\u0670")
+        {
+          // ARABIC LETTER SUPERSCRIPT ALEF
+          // Unicode: U+0670, UTF-8: D9 B0
+        }
+        else
+        {
+          result += inputString[i];
+        }
+      }
+
+      return result;
+    }
+  </script>
+</head>
+<body>
+  <h1>Arabic Diacritic Remover: حذف التشكيل</h1>
+  <h2>Input: المعطيات</h2>
+  <p>Paste or type diacritic text in the following text input area: ضع النص بالتشكيل في الصندوق التالي</p>
+  
+  <h1></h1>
+  <textarea id="arabicInputTextArea" rows="4" cols="100"></textarea>
+  <h2>Actions أوامر</h2>
+  <button onclick="document.getElementById('arabicOutputTextArea').value = removeDiacritics(document.getElementById('arabicInputTextArea').value);">Remove Diacritics احذف التشكيل</button>
+
+  <h2>Output النتيجة</h2>
+  <textarea id="arabicOutputTextArea" rows="4" cols="100"></textarea>
+
+</body>
+</html>
