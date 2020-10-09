@@ -35,7 +35,9 @@ SOFTWARE.
 
   <title>Basic Arabic Diacritic Remover</title>
   <script>
-    function removeDiacritics(inputString)
+    var EXAMPLE_TEXT = 'شُكْرًا جَزِيْلًا. Thank you very much.\n تُوْجَدْ شَدَّةٌ، وَفَتْحَةٌ عَلَى هَٰذَهِ الوَرَقَةٍ ';
+
+    function removeDiacritics(inputString, keepFathatan)
     {
       result = "";
 
@@ -56,7 +58,7 @@ SOFTWARE.
           // ARABIC DAMMA
           // Unicode: U+064F, UTF-8: D9 8F
         }
-        else if (inputString[i] === "\u064B")
+        else if (inputString[i] === "\u064B" && !keepFathatan)
         {
           // ARABIC FATHATAN
           // Unicode: U+064B, UTF-8: D9 8B
@@ -94,6 +96,20 @@ SOFTWARE.
 
       return result;
     }
+
+    function removeDiacriticsEventHandler()
+    {
+      var inputText = document.getElementById('arabicInputTextArea').value;
+      var keepFathatan = document.getElementById('keepFathatanCheckbox').checked;
+      var outputText = removeDiacritics(inputText, keepFathatan);
+      document.getElementById('arabicOutputTextArea').value = outputText;
+    }
+
+    function placeExampleTextEventHandler()
+    {
+      document.getElementById('arabicInputTextArea').value = EXAMPLE_TEXT;
+    }
+
   </script>
 </head>
 <body>
@@ -101,11 +117,16 @@ SOFTWARE.
   <h2>Input: المعطيات</h2>
   <p>Paste or type diacritic text in the following text input area: ضع النص بالتشكيل في الصندوق التالي
   <br>
-    <button onclick="document.getElementById('arabicInputTextArea').value = 'هَذَا مَثَلٌ. This is an example';">Put Example ضِعْ مَثَلًا</button>
-</p>
+    <button onclick="placeExampleTextEventHandler();">Put Example ضِعْ مَثَلًا</button>
+  </p>
   <textarea id="arabicInputTextArea" rows="4" cols="100"></textarea>
+  
   <h2>Actions أوامر</h2>
-  <button onclick="document.getElementById('arabicOutputTextArea').value = removeDiacritics(document.getElementById('arabicInputTextArea').value);">Remove Diacritics احذف التشكيل</button>
+  <button onclick="removeDiacriticsEventHandler();">Remove Diacritics احذف التشكيل</button>
+  <h3>Options اختيارات</h3>
+  <input type="checkbox" id="keepFathatanCheckbox" checked=true >
+  <label for="keepFathatanCheckbox"> Do not delete fatḥatān diacritic. لا تحذف الفتحتان</label><br>
+
 
   <h2>Output النتيجة</h2>
   <textarea id="arabicOutputTextArea" rows="4" cols="100"></textarea>
