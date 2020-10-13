@@ -28,3 +28,7 @@ Technologies used
 - HTML
 - JavaScript
 
+## About the Developer of this Arabic Diacritic Removal web application
+www.linkedin.com/in/elsanussi-mneina-57a8181b5
+
+github.com/elsanussi-s-mneina
