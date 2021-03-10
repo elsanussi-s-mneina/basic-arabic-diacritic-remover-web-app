@@ -14,15 +14,15 @@ morpheme for indefiniteness, and a lack of a vowel. There is also one diacritic
 for a long vowel that is removed.
 
 The diacritics that are removed are:
-- سكُون
-- ٌشَدَّة
+- سُكُوْنٌ
+- شَدَّةٌ
 - فَتْحَةٌ
 - كَسْرَةٌ
 - ضَمَّةٌ
 - فَتْحَتَانِ
 - كَسْرَتَانِ
 - ضَمَّتَانِ
-
+- وَصْلَة عَلَى ٱلأَلِفِ
 ## Technical Details
 Technologies used
 - HTML
