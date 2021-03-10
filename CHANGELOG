@@ -1,2 +1,6 @@
 2021-01-20
 - fix an Arabic grammatical mistake
+
+2021-03-10
+- implement removal of one more diacritic: WASLA from ALEF
+- Fix bug in index_ar.html that stopped removal of ARABIC LETTER SUPERSCRIPT ALEF
